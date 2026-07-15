@@ -9,6 +9,7 @@ dns.setServers([
 
 const connectDB = async () => {
   try {
+    //ansar
     await mongoose.connect(process.env.MONGO_URI);
 
     console.log("MongoDB connected");
