@@ -1,8 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
+import proxy from "express-http-proxy";
 dotenv.config();
 
 const app = express();
+app.use("/auth", proxy(process.env.AUTH_SERVICE_URL));
 const PORT = process.env.PORT;
 
 app.use(express.json());
